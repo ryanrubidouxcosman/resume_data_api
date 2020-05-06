@@ -13,6 +13,10 @@
     resume_url: student.resume_url,
     github_url: student.github_url,
     photo: student.photo,
+    experiences: student.experiences,
+    educations: student.educations,
+    skills: student.skills,
+    projects: student.projects,
   }
 end
 

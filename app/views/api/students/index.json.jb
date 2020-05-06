@@ -4,7 +4,7 @@
     first_name: student.first_name,
     last_name: student.last_name,
     email: student.email,
-    password_digest: student.password_digest,
+    password: student.password,
     phone_number: student.phone_number,
     short_bio: student.short_bio,
     linkedin_url: student.linkedin_url,

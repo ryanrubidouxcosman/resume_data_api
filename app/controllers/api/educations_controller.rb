@@ -1,10 +1,11 @@
 class Api::EducationsController < ApplicationController
   def index
     @educations = Education.all
+    render index.json
   end
 
   def show
-    education_id = params["id"]
-    @education = Education.find_by(id: education_id)
+    @education = Education.find_by(id: params["id"])
     render "show.json.jb"
+  end
 end

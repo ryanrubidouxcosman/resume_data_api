@@ -1,0 +1,22 @@
+@educations.map do |education|
+  {
+    id: education.id,
+    start_date: education.start_date,
+    end_date: education.end_date,
+    degree: education.degree,
+    university_name: education.university_name,
+    details: education.details,
+    student_id: education.student_id,
+  }
+end
+
+# create_table "educations", force: :cascade do |t|
+#   t.integer "student_id"
+#   t.string "start_date"
+#   t.string "end_date"
+#   t.string "degree"
+#   t.string "university_name"
+#   t.text "details"
+#   t.datetime "created_at", precision: 6, null: false
+#   t.datetime "updated_at", precision: 6, null: false
+# end

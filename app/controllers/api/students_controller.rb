@@ -8,7 +8,8 @@ class Api::StudentsController < ApplicationController
     @student = Student.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
-      password_digest: params[:password_digest],
+      email: params[:email],
+      password: params[:password],
       phone_number: params[:phone_number],
       short_bio: params[:short_bio],
       linkedin_url: params[:linkedin_url],
@@ -18,7 +19,7 @@ class Api::StudentsController < ApplicationController
       github_url: params[:github_url],
       photo: params[:photo],
     )
-    @Student.save
+    @student.save
     render "show.json.jb"
   end
 
@@ -28,10 +29,11 @@ class Api::StudentsController < ApplicationController
   end
 
   def edit
-    @student = Photo.find_by(id: params[:id])
+    @student = Student.find_by(id: params[:id])
     @student.first_name = params[:first_name] || @student.first_name
     @student.last_name = params[:last_name] || @student.last_name
-    @student.password_digest = params[:password_digest] || @student.password_digest
+    @student.email = params[:email] || @student.email
+    @student.password = params[:password] || @student.password
     @student.phone_number = params[:phone_number] || @student.phone_numnber
     @student.short_bio = params[:short_bio] || @student.short_bio
     @student.linkedin_url = params[:linked_url] || @student.linkedin_url
@@ -45,7 +47,7 @@ class Api::StudentsController < ApplicationController
   end
 
   def destroy
-    student = Student.find_by(id: params[:id])
+    student = Student.find_by(id: params["id"])
     student.destroy
     render json: {message: "Student is successfully destroyed."}
   end

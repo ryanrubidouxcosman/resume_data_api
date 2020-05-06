@@ -1,7 +1,7 @@
 class Api::EducationsController < ApplicationController
   def index
     @educations = Education.all
-    render index.json
+    render "index.json.jb"
   end
 
   def show

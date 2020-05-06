@@ -1,0 +1,10 @@
+@projects.map do |project|
+  {
+    student_id: project.student_id,
+    name: project.name,
+    description: project.description,
+    url: project.url,
+    screenshot: project.screenshot,
+  }
+end
+
